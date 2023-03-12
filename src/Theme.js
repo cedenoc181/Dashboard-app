@@ -1,10 +1,11 @@
 import { createContext, useState, useMemo } from 'react'
 import { createTheme } from "@mui/material/styles";
 
+
 // color design tokens 
 // if the mode is dark then the colors selected in the ternary will be the dark mode colors and if on light mode then the ligh mode colors 
 // will be selected 
-export const tokens = (mode) > ({
+export const tokens = (mode) => ({
  ...(mode === "dark" 
  ? {
     gray: {
@@ -124,7 +125,7 @@ blueAccent: {
 })
 
 
-// mui thewmer settings 
+// mui theme settings 
 // this code determines which set of color to display when a mode is selected 
 export const themeSettings = (mode) => {
     const colors = tokens(mode);
@@ -197,7 +198,7 @@ export const themeSettings = (mode) => {
     }
 };
 
-//contextr for color mode 
+//contextr for color mode this is thew function that gives dark/light mode functionality 
 
 export const ColorModeContext = createContext({
     toggleColorMode: () => {}
