@@ -1,6 +1,6 @@
 import { createContext, useState, useMemo } from 'react'
 import { createTheme } from "@mui/material/styles";
-import { Mode } from '@mui/icons-material';
+import { mode } from '@mui/icons-material';
 
 // color design tokens 
 // if the mode is dark then the colors selected in the ternary will be the dark mode colors and if on light mode then the ligh mode colors 
