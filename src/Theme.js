@@ -1,12 +1,12 @@
 import { createContext, useState, useMemo } from 'react'
 import { createTheme } from "@mui/material/styles";
-import { mode } from '@mui/icons-material';
 
 // color design tokens 
 // if the mode is dark then the colors selected in the ternary will be the dark mode colors and if on light mode then the ligh mode colors 
 // will be selected 
 export const tokens = (mode) > ({
- ...(mode === "dark" ? {
+ ...(mode === "dark" 
+ ? {
     gray: {
         100: "#e0e0e0",
         200: "#c2c2c2",
@@ -131,7 +131,7 @@ export const themeSettings = (mode) => {
 
     return {
         pallete: {
-            mode:mode,
+            mode: mode,
             ...(mode === "dark" 
             ? {
                primary: {

@@ -1,5 +1,5 @@
 import { Box, IconButton, useTheme } from "@mui/material";
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -12,12 +12,49 @@ import SearchIcon from "@mui/icons-material/Search";
 function TopBar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-   
+  const colorMode = useContext(ColorModeContext);
+
   return (
-    <div>
-      
-    </div>
-  )
+    // box element is from mui similar to a div, can add css directly to element
+    <Box display="flex" justifyContent="space-between" p={2}>
+      {/* search bar  */}
+      <Box
+        display="flex"
+        backgroundColor={colors.primary[400]}
+        borderRadius="3px"
+      >
+        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="search" />
+        <IconButton type="button" sx={{ p: 1 }}>
+          <SearchIcon />
+        </IconButton>
+      </Box>
+      {/* ICONS */}
+      <Box display="flex">
+        <IconButton onClick={colorMode.toggleColorMode}>
+          
+            {theme.palette.mode === "dark" 
+            ? (<DarkModeOutlinedIcon />)     
+            : 
+            (<LightModeOutlinedIcon />)
+            }
+
+        </IconButton>
+
+        <IconButton>
+            <NotificationsOutlinedIcon />
+        </IconButton>
+
+        <IconButton>
+            <SettingsOutlinedIcon />
+        </IconButton>
+
+        <IconButton>
+            <PersonOutlinedIcon />
+        </IconButton>
+        
+      </Box>
+    </Box>
+  );
 }
 
-export default TopBar
+export default TopBar;
