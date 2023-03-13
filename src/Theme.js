@@ -122,7 +122,7 @@ blueAccent: {
     900: "#e1e2fe"
 },
  }),
-})
+});
 
 
 // mui theme settings 
@@ -194,14 +194,14 @@ export const themeSettings = (mode) => {
                 fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
                 fontSize: 14,  
             },
-        }
-    }
+        },
+    };
 };
 
 //contextr for color mode this is thew function that gives dark/light mode functionality 
 
 export const ColorModeContext = createContext({
-    toggleColorMode: () => {}
+    toggleColorMode: () => {},
 });
 
 export const useMode = () => {
@@ -215,10 +215,9 @@ export const useMode = () => {
         []
     );
 
-const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
-
+const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 return [theme, colorMode];
-}
+};
 
 
 

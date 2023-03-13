@@ -1,5 +1,5 @@
 import { Box, IconButton, useTheme } from "@mui/material";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -9,7 +9,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
-function TopBar() {
+const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
@@ -56,4 +56,4 @@ function TopBar() {
   );
 }
 
-export default TopBar;
+export default Topbar;
